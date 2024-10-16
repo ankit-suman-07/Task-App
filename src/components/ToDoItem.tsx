@@ -11,9 +11,14 @@ type ToDoItemProps = {
 const ToDoItem = ({id, title, complete, toggleToDo, deleteToDo}: ToDoItemProps) => {
   return (
     <div>
-        <input type='checkbox' />
+        <input 
+            id={id}
+            defaultChecked={complete}
+            type='checkbox' 
+            onChange={(e) => toggleToDo(id, e.target.checked)}
+        />
         <label>Item Name</label>
-        <button>Delete</button>
+        <button onClick={() => deleteToDo(id)} >Delete</button>
     </div>
   )
 }

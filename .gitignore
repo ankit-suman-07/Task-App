@@ -37,3 +37,6 @@ next-env.d.ts
 
 # environment variables
 .env
+
+# prisma migration db
+dev.db*

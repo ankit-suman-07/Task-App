@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import ToDoItem from "@/components/ToDoItem";
 import { prisma } from "@/db";
+import { redirect } from "next/navigation";
 
 function getTodos() {
   return prisma.todo.findMany();
@@ -18,6 +19,7 @@ async function deleteToDo(id: string) {
   "use server"
 
   await prisma.todo.delete({where: {id}});
+  redirect("/");
 }
 
 export default async function Home() {

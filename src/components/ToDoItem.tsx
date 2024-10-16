@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 
 type ToDoItemProps = {
@@ -17,7 +18,7 @@ const ToDoItem = ({id, title, complete, toggleToDo, deleteToDo}: ToDoItemProps) 
             type='checkbox' 
             onChange={(e) => toggleToDo(id, e.target.checked)}
         />
-        <label>Item Name</label>
+        <label>{title}</label>
         <button onClick={() => deleteToDo(id)} >Delete</button>
     </div>
   )

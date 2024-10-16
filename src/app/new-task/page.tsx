@@ -21,7 +21,7 @@ async function createTodo(data: FormData) {
 const NewTask = () => {
   return (
     <div>
-        <form>
+        <form action={createTodo} >
             <input type='text' name='title' />
             <div>
                 <button type="submit">Submit</button>
